@@ -2,42 +2,126 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Moje stránka</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karolína Karlová | Osobní stránka</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
     <style>
-        body {
+        :root {
+            --primary: #b57edc;
+            --secondary: #ff9ad5;
+            --dark: #2d1e3f;
+            --light: #ffffff;
+        }
+
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ff9ad5, #b57edc);
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--light);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            color: white;
-            text-align: center;
+            min-height: 100vh;
         }
 
-        .card {
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 40px;
+        .container {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
             border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 50px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
         }
 
         h1 {
-            margin-bottom: 20px;
-            font-size: 36px;
+            font-weight: 700;
+            font-size: 32px;
+            margin-bottom: 10px;
         }
 
-        p {
-            font-size: 20px;
+        .subtitle {
+            font-weight: 300;
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .contact {
+            margin-top: 25px;
+            font-size: 16px;
+        }
+
+        .contact a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255,255,255,0.6);
+            transition: 0.3s;
+        }
+
+        .contact a:hover {
+            color: var(--dark);
+            border-color: var(--dark);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="card">
+
+    <div class="container">
+        <!-- Náhodná profesionální fotka kočky -->
+        <img src="https://source.unsplash.com/300x300/?cat" alt="Kočka" class="profile-img">
+
         <h1>Karolína Karlová</h1>
-        <p>Ahoj, jmenuji se Kája a mám ráda kočky.</p>
+        <p class="subtitle">Ahoj, jmenuji se Kája a mám ráda kočky.</p>
+
+        <div class="contact">
+            📞 Kontakt: 
+            <a href="tel:566874584">566 874 584</a>
+        </div>
+
+        <footer>
+            © 2026 Karolína Karlová
+        </footer>
     </div>
+
 </body>
 </html>
